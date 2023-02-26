@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .systemTeal
         setupConstrains()
         animateView()
+        rotateViewWithAnimation()
     }
     
     private let uiView: UIView = {
@@ -54,8 +55,13 @@ class ViewController: UIViewController {
             self.view.setNeedsLayout()
             }
         }
-    
-    let myView = UIView()
+
+    func rotateViewWithAnimation() {
+        UIView.animate(withDuration: 2.5) {
+            self.uiView.transform = self.uiView.transform.rotated(by: .pi)
+        }
+            
+    }
     
     
 
